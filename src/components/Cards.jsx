@@ -1,4 +1,6 @@
+//import { findByLabelText } from '@testing-library/react';
 import Card from './Card';
+
 
 export default function Cards(props) {
    const { characters } = props;
