@@ -10,6 +10,7 @@ export default function Cards(props) {
       {characters.map((c) => (
         <Card
           key={c.id}
+          id={c.id}
           name={c.name}
           species={c.species}
           gender={c.gender}

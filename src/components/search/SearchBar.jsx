@@ -1,8 +1,7 @@
 import { useState } from "react";
 import a from "./Search.module.css";
 
-export default function SearchBar(props) {
-  const { onSearch } = props;
+export default function SearchBar({ onSearch }) {
   const [character, setCharater] = useState("");
 
   const handleSearch = () => {

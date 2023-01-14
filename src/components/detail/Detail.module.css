@@ -1,0 +1,38 @@
+/* estilos para el contenedor principal */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* estilo para el botón de volver a Home */
+.buttonBack {
+  background-color: blue;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+
+/* estilos para los títulos */
+h1 {
+  color: #fff;
+}
+
+.subTitle {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+/* estilo para la imagen */
+.imgDetail {
+  width: 200px;
+  height: auto;
+  border: solid 3px #000;
+  border-radius: 30% 30% 0px 0px;
+  margin-top: 20px;
+}
