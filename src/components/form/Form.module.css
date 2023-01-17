@@ -1,0 +1,87 @@
+.container {
+  /* Ancho del contenedor en porcentaje */
+  width: 80%;
+  /* Centrar el contenedor horizontalmente */
+  margin-left: auto;
+  margin-right: auto;
+  /* Espacio interno del contenedor */
+  padding: 3em;
+  background-image: linear-gradient(to right, #e66465, #9198e5);
+  /* Borde del contenedor */
+  border: 1px solid #ccc;
+  /* Bordes redondeados del contenedor */
+  border-radius: 10px;
+
+  /* Ajuste para dispositivos móviles */
+  @media (max-width: 600px) {
+    width: 90%;
+    padding: 2em;
+  }
+}
+
+form {
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+
+  /* Ajuste para dispositivos móviles */
+  @media (max-width: 600px) {
+    width: 90%;
+    padding: 10px;
+  }
+}
+
+label {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #FFF;
+
+  /* Ajuste para dispositivos móviles */
+  @media (max-width: 600px) {
+    font-size: 16px;
+  }
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+
+  /* Ajuste para dispositivos móviles */
+  @media (max-width: 600px) {
+    padding: 8px;
+  }
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.warning {
+  border: solid red 3px;
+  border-radius: 0.2em;
+}
+
+.danger {
+  font-size: 14px;
+  color: red;
+  margin-left: 10em;
+}

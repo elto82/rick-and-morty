@@ -1,0 +1,26 @@
+.errorContainer {
+  text-align: center;
+  padding: 50px;
+}
+
+h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 2rem;
+  color: gray;
+  font-weight: bolder;
+}
+
+.buttonBack {
+  background-color: blue;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-bottom: 20px;
+  cursor: pointer;
+  box-shadow: 0px 4px 10px rgba(0, 255, 0, 0.2);
+}

@@ -1,13 +1,34 @@
 import "./App.css";
+import Form from "./components/form/Form";
+import Error from "./components/error/Error";
 import Cards from "./components/cards/Cards.jsx";
 import About from "./components/about/About.jsx";
 import Nav from "./components/nav/Nav.jsx";
 import Detail from "./components/detail/Detail.jsx";
-import { useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Route, Routes, useNavigate, useLocation } from "react-router-dom";
 
 function App() {
   const [characters, setCharacters] = useState([]);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [access, setAccess] = useState(false);
+  let username = "elto.82@gmail.com";
+  let password = "antonio1";
+
+  const login = (userData) => {
+    if (userData.password === password && userData.username === username) {
+      setAccess(true);
+      navigate("/home");
+    } else {
+      alert("Usuario o contraseña erronea");
+    }
+  };
+
+  const logout = () => {
+    setAccess(false);
+    navigate("/");
+  };
 
   const onSearch = (character) => {
     // Convertimos a un número entero
@@ -34,16 +55,29 @@ function App() {
     setCharacters(characters.filter((c) => c.id !== id));
   };
 
+  useEffect(() => {
+    !access && navigate("/");
+  }, [access]);
+
   return (
     <div>
-      <Nav onSearch={onSearch} />
+      {/* {location.pathname !== "/" && <Nav onSearch={onSearch} logout={logout} />} */}
+      {location.pathname === "/" ? (
+        ""
+      ) : !/detail/.test(location.pathname) ? (
+        <Nav onSearch={onSearch} logout={logout} />
+      ) : (
+        ""
+      )}
       <Routes>
         <Route
           path="/home"
           element={<Cards characters={characters} onClose={onClose} />}
         />
+        <Route path="/" element={<Form login={login} />} />
         <Route path="/about" element={<About />} />
         <Route path="/detail/:detailId" element={<Detail />} />
+        <Route path="*" element={<Error />} />
       </Routes>
     </div>
   );
