@@ -8,32 +8,36 @@
 
 /* estilo para el botón de volver a Home */
 .buttonBack {
-  background-color: blue;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
+  color: #fff;
   text-decoration: none;
-  margin-bottom: 20px;
+  padding: 12px 20px;
+  border: solid 1px #000;
+  border-radius: 4px;
   cursor: pointer;
+  background-color: rgba(0, 0, 255, 0.441);
+  float: right;
+  height: auto;
 }
 
 /* estilos para los títulos */
 h1 {
-  color: #fff;
+  margin-top: 80px;
+  color: #000;
 }
 
 .subTitle {
   font-size: 1.5em;
   font-weight: bold;
-  color: #fff;
+  color: #000;
   margin-bottom: 10px;
 }
 
 /* estilo para la imagen */
 .imgDetail {
-  width: 200px;
+  width: 300px;
   height: auto;
   border: solid 3px #000;
   border-radius: 30% 30% 0px 0px;
   margin-top: 20px;
+  box-shadow: -5px 10px 16px 10px rgba(0, 0, 0, 0.9);
 }

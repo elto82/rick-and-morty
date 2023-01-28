@@ -1,4 +1,5 @@
 import "./App.css";
+import Favorites from "./components/Favorites/Favorites.jsx";
 import Form from "./components/form/Form";
 import Error from "./components/error/Error";
 import Cards from "./components/cards/Cards.jsx";
@@ -13,8 +14,8 @@ function App() {
   const navigate = useNavigate();
   const location = useLocation();
   const [access, setAccess] = useState(false);
-  let username = "elto.82@gmail.com";
-  let password = "antonio1";
+  let username = "";
+  let password = "";
 
   const login = (userData) => {
     if (userData.password === password && userData.username === username) {
@@ -57,23 +58,27 @@ function App() {
 
   useEffect(() => {
     !access && navigate("/");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [access]);
 
   return (
     <div>
-      {/* {location.pathname !== "/" && <Nav onSearch={onSearch} logout={logout} />} */}
-      {location.pathname === "/" ? (
+      {location.pathname === "/" ||
+      location.pathname === "/favorites" ||
+      location.pathname === "/about" ? (
         ""
       ) : !/detail/.test(location.pathname) ? (
         <Nav onSearch={onSearch} logout={logout} />
       ) : (
         ""
       )}
+
       <Routes>
         <Route
           path="/home"
           element={<Cards characters={characters} onClose={onClose} />}
         />
+        <Route path="/favorites" element={<Favorites />} />
         <Route path="/" element={<Form login={login} />} />
         <Route path="/about" element={<About />} />
         <Route path="/detail/:detailId" element={<Detail />} />

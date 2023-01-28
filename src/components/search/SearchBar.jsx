@@ -1,5 +1,5 @@
 import { useState } from "react";
-import a from "./Search.module.css";
+import "./Search.css";
 
 export default function SearchBar({ onSearch }) {
   const [character, setCharater] = useState("");
@@ -18,14 +18,15 @@ export default function SearchBar({ onSearch }) {
   };
 
   return (
-    <div className={a.searchbar}>
+    <div className="searchbar">
       <input
         type="search"
+        placeholder="Input Id"
         value={character}
         onChange={(e) => setCharater(e.target.value)}
       />
-      <button onClick={handleSearch}>Agregar</button>
-      <button onClick={handleRandomSearch}>Consulta Aleatoria</button>
+      <button onClick={handleSearch}>Add</button>
+      <button onClick={handleRandomSearch}>Add random</button>
     </div>
   );
 }

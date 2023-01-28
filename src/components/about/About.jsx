@@ -1,13 +1,21 @@
 import React from "react";
-import s from "./About.module.css";
+import "./About.css";
+import mainImage from "./foto.jpg";
+import { useNavigate } from "react-router-dom";
 
 const About = () => {
+  const navigate = useNavigate();
+
   return (
-    <div className={s.aboutContainer}>
-      <h1>Sobre mí</h1>
-      <div className={s.aboutInfo}>
-        <img src="./foto.jpg" alt="i am" className={s.profilePic} />
-        <div className={s.aboutText}>
+    <div className="aboutContainer">
+      <button onClick={() => navigate("/home")}>Home</button>
+
+      <div className="aboutInfo">
+        <div>
+          <h1>Sobre mí</h1>
+          <img src={mainImage} alt="i am" />
+        </div>
+        <div className="aboutText">
           <p>
             Hola, mi nombre es <strong>Argiro</strong> y soy el creador de esta
             aplicación.

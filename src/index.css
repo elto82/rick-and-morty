@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 16px;
+  background-image: url("/src/components/assets/rick-y-morty.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+}

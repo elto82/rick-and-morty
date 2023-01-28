@@ -1,7 +1,12 @@
 .cards {
-  overflow-y: scroll;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  position: relative;
+  background-image: url("/src/components/assets/rick-y-morty.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  padding-top: 200px;
 }
