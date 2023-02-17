@@ -8,6 +8,7 @@ import Nav from "./components/nav/Nav.jsx";
 import Detail from "./components/detail/Detail.jsx";
 import { useState, useEffect } from "react";
 import { Route, Routes, useNavigate, useLocation } from "react-router-dom";
+import axios from "axios";
 
 function App() {
   const [characters, setCharacters] = useState([]);
@@ -31,9 +32,9 @@ function App() {
     navigate("/");
   };
 
-  const onSearch = (character) => {
+  /*   const onSearch = (id) => {
     // Convertimos a un número entero
-    const characterId = parseInt(character, 10);
+    const characterId = parseInt(id, 10);
     //  existe en el array de personajes
     if (characters.some((c) => c.id === characterId)) {
       // mensaje de error
@@ -41,7 +42,7 @@ function App() {
     } else {
       // Realizamos la búsqueda https://rickandmortyapi.com/api/character/
       //http://localhost:3001/rickandmorty/character/${character}
-      fetch(`http://localhost:3001/rickandmorty/onsearch/${character}`)
+      fetch(`http://localhost:3001/rickandmorty/character/${id}`)
         .then((response) => response.json())
         .then((data) => {
           if (data.name) {
@@ -49,6 +50,32 @@ function App() {
           } else {
             window.alert("No hay personajes con ese ID");
           }
+        });
+    }
+  }; */
+
+  const onSearch = (id) => {
+    // Convertimos a un número entero
+    const characterId = Number(id);
+    //  existe en el array de personajes
+    if (characters.some((c) => c.id === characterId)) {
+      // mensaje de error
+      window.alert("Este personaje ya ha sido añadido");
+    } else {
+      // Realizamos la búsqueda utilizando Axios
+      axios
+        .get(`http://localhost:3001/rickandmorty/character/${id}`)
+        .then((response) => {
+          const data = response.data;
+          if (data.name) {
+            setCharacters((oldChars) => [...oldChars, data]);
+          } else {
+            window.alert("No hay personajes con ese ID");
+          }
+        })
+        .catch((error) => {
+          console.error(error);
+          window.alert("Ocurrió un error al realizar la búsqueda");
         });
     }
   };

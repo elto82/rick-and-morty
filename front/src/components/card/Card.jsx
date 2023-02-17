@@ -34,7 +34,7 @@ function Card(props) {
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [props.myFavorites]);
 
   return (
     <div className={c.card}>

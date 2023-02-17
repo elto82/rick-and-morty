@@ -10,6 +10,8 @@ const Detail = () => {
 
   useEffect(() => {
     //https://rickandmortyapi.com/api/character/${detailId}
+    //http://localhost:3001/rickandmorty/detail
+
     fetch(`http://localhost:3001/rickandmorty/detail/${detailId}`)
       .then((response) => response.json())
       .then((char) => {

@@ -1,16 +1,32 @@
+import axios from "axios";
+
 // Acción para agregar personajes a la lista de favoritos
 export const addFavorite = (character) => {
-  return {
-    type: "ADD_FAVORITE",
-    payload: character,
+  return (dispatch) => {
+    axios
+      .post(`http://localhost:3001/rickandmorty/fav`, character)
+      .then((v) => v.data)
+      .then((d) => {
+        dispatch({
+          type: "ADD_FAVORITE",
+          payload: d,
+        });
+      });
   };
 };
 
 // Acción para eliminar personajes de la lista de favoritos
 export const removeFavorite = (characterId) => {
-  return {
-    type: "REMOVE_FAVORITE",
-    payload: characterId,
+  return (dispatch) => {
+    axios
+      .delete(`http://localhost:3001/rickandmorty/fav/${characterId}`)
+      .then((v) => v.data)
+      .then((d) => {
+        dispatch({
+          type: "REMOVE_FAVORITE",
+          payload: characterId,
+        });
+      });
   };
 };
 
