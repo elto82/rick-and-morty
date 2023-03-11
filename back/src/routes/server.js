@@ -124,3 +124,22 @@ app.delete("/rickandmorty/fav/:id", (req, res) => {
 app.listen(port, () => {
   console.log(`Server started on port ${port} `);
 }); */
+
+/* const router = require("./characters");
+const cors = require("cors");
+const express = require("express");
+
+const server = express();
+const PORT = 3001;
+
+server.use(express.json());
+server.use(cors());
+server.use("/rickandmorty", router);
+
+server.listen(PORT, () => {
+  console.log("Server raised in http//:localhost port.... " + PORT);
+});
+
+module.exports = server; */
+
+//"start": "nodemon ./index.js",

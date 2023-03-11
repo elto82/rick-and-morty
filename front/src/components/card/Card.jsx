@@ -70,6 +70,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-const CardContainer = connect(mapStateToProps, mapDispatchToProps)(Card);
-
-export default CardContainer;
+export default connect(mapStateToProps, mapDispatchToProps)(Card);

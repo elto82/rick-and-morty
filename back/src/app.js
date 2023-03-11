@@ -11,6 +11,18 @@ app.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
 app.use(bodyParser.json({ limit: "50mb" }));
 app.use(cors());
 
+/* const { getAllChars } = require("./controllers/getAllChars");
+
+app.get("/rickandmorty/allCharacters", getAllChars, async (req, res) => {
+  try {
+    const allCharacters = await getAllChars();
+
+    res.status(200).json(allCharacters);
+  } catch (error) {
+    res.status(404).send("hubo un error");
+  }
+}); */
+
 //Seteamos headers para la respuesta que le enviamos al cliente
 /* app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "http://localhost:3000"); //Autorizo recibir solicitudes de este dominio
