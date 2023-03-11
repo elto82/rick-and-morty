@@ -54,7 +54,7 @@ function App() {
     }
   }; */
 
-  const onSearch = (id) => {
+  /* const onSearch = (id) => {
     // Convertimos a un número entero
     const characterId = Number(id);
     //  existe en el array de personajes
@@ -77,6 +77,27 @@ function App() {
           console.error(error);
           window.alert("Ocurrió un error al realizar la búsqueda");
         });
+    }
+  }; */
+  const onSearch = async (id) => {
+    const characterId = Number(id);
+    if (characters.some((c) => c.id === characterId)) {
+      window.alert("Este personaje ya ha sido añadido");
+    } else {
+      try {
+        const response = await axios.get(
+          `http://localhost:3001/rickandmorty/character/${id}`
+        );
+        const data = response.data;
+        if (data.name) {
+          setCharacters((oldChars) => [...oldChars, data]);
+        } else {
+          window.alert("No hay personajes con ese ID");
+        }
+      } catch (error) {
+        console.error(error);
+        window.alert("Ocurrió un error al realizar la búsqueda");
+      }
     }
   };
 

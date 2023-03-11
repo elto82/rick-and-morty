@@ -3,7 +3,11 @@ import { connect } from "react-redux";
 import "./Favorites.css";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { orderCards, filterCards } from "../../redux/actions.js";
+import {
+  orderCards,
+  filterCards,
+  removeFavorite,
+} from "../../redux/actions.js";
 
 const Favorites = ({ myFavorites }) => {
   const navigate = useNavigate();
@@ -32,6 +36,11 @@ const Favorites = ({ myFavorites }) => {
       <div className="favorites-container">
         {myFavorites.map((fav) => (
           <div className="favorite-card" key={fav.id}>
+            {
+              <button onClick={() => dispatch(removeFavorite(fav.id))}>
+                ❤️
+              </button>
+            }
             <h2>Number: {fav.id}</h2>
             <h2>{fav.name}</h2>
             <p>Especie: {fav.species}</p>

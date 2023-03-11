@@ -11,7 +11,7 @@ export default function SearchBar({ onSearch }) {
 
   const handleRandomSearch = () => {
     // Obtenemos un número aleatorio entre 1 y 826
-    const randomNumber = Math.floor(Math.random() * 826) + 1;
+    const randomNumber = Math.floor(Math.random() * 100) + 1;
 
     // Realizamos una consulta con el número aleatorio
     onSearch(randomNumber);
