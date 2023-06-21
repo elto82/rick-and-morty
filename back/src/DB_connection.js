@@ -6,7 +6,7 @@ const modelFavorite = require("./models/Favorite.js");
 
 const sequelize = new Sequelize(
   // URL
-  `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`,
+  `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`,
   { logging: false, native: false }
 );
 
