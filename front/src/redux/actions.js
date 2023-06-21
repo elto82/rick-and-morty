@@ -1,24 +1,10 @@
 import axios from "axios";
 
-// Acción para agregar personajes a la lista de favoritos
-/* export const addFavorite = (character) => {
-  return (dispatch) => {
-    axios
-      .post(`http://localhost:3001/rickandmorty/fav`, character)
-      .then((v) => v.data)
-      .then((d) => {
-        dispatch({
-          type: "ADD_FAVORITE",
-          payload: d,
-        });
-      });
-  };
-}; */
 export const addFavorite = (character) => {
   return async (dispatch) => {
     try {
       const response = await axios.post(
-        `http://localhost:3001/rickandmorty/fav`,
+        `http://localhost:7000/rickandmorty/fav`,
         character
       );
       const data = response.data;
@@ -32,24 +18,10 @@ export const addFavorite = (character) => {
   };
 };
 
-// Acción para eliminar personajes de la lista de favoritos
-/* export const removeFavorite = (characterId) => {
-  return (dispatch) => {
-    axios
-      .delete(`http://localhost:3001/rickandmorty/fav/${characterId}`)
-      .then((v) => v.data)
-      .then((d) => {
-        dispatch({
-          type: "REMOVE_FAVORITE",
-          payload: characterId,
-        });
-      });
-  };
-}; */
 export const removeFavorite = (id) => {
   return async (dispatch) => {
     try {
-      await axios.delete(`http://localhost:3001/rickandmorty/fav/${id}`);
+      await axios.delete(`http://localhost:7000/rickandmorty/fav/${id}`);
 
       return dispatch({
         type: "REMOVE_FAVORITE",
@@ -81,7 +53,7 @@ export const getFavorites = () => {
   return async (dispatch) => {
     try {
       const response = await axios.get(
-        "http://localhost:3001/rickandmorty/fav"
+        "http://localhost:7000/rickandmorty/fav"
       );
       dispatch({
         type: "GET_FAVORITES",

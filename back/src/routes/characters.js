@@ -5,13 +5,6 @@ const { getAllChars } = require("../controllers/getAllChars");
 
 router.get("/allCharacters", getAllChars);
 
-/* const {
-  getCharacterId,
-  getDetailId,
-  getFav,
-  postFav,
-  deleteFavId,
-} = require("../controllers/index.js"); */
 const getCharacterId = require("../controllers/getCharById");
 const getDetailId = require("../controllers/getCharDetail");
 const getFav = require("../controllers/getFav");

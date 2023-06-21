@@ -5,9 +5,7 @@ const getDetailId = async (req, res) => {
   try {
     const { detailId } = req.params;
     const character = await Character.findOne({ where: { id: detailId } });
-    /* const response = await axios.get(
-      `https://rickandmortyapi.com/api/character/${detailId}`
-    ); */
+
     if (!character) {
       return res.status(404).json({ message: "Character not found" });
     }

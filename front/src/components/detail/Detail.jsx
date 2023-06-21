@@ -9,28 +9,11 @@ const Detail = () => {
   const [character, setCharacter] = useState({});
   const { detailId } = useParams();
 
-  /* useEffect(() => {
-    //https://rickandmortyapi.com/api/character/${detailId}
-    //http://localhost:3001/rickandmorty/detail
-    fetch(`http://localhost:3001/rickandmorty/detail/${detailId}`)
-      .then((response) => response.json())
-      .then((char) => {
-        if (char.name) {
-          setCharacter(char);
-        } else {
-          window.alert("No hay personajes con ese ID");
-        }
-      })
-      .catch((err) => {
-        window.alert("No hay personajes con ese ID");
-      });
-    return setCharacter({});
-  }, [detailId]); */
   useEffect(() => {
     const detailData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3001/rickandmorty/detail/${detailId}`
+          `http://localhost:7000/rickandmorty/detail/${detailId}`
         );
         const char = response.data;
         char.name

@@ -1,16 +1,3 @@
-/* 
-const favs = require("../utils/favs");
-
-const getFav = async (req, res) => {
-  try {
-    res.status(200).json(favs);
-  } catch (error) {
-    res.status(500).send(error.message);
-  }
-};
-module.exports = getFav;
-*/
-//const axios = require("axios");
 const { Favorite } = require("../DB_connection");
 
 const getFav = async (req, res) => {
