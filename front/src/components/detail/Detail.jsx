@@ -13,7 +13,7 @@ const Detail = () => {
     const detailData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:7000/rickandmorty/detail/${detailId}`
+          `https://rick-and-morty-production-b632.up.railway.app/rickandmorty/detail/${detailId}`
         );
         const char = response.data;
         char.name

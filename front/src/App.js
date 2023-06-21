@@ -39,7 +39,7 @@ function App() {
     } else {
       try {
         const response = await axios.get(
-          `http://localhost:7000/rickandmorty/character/${id}`
+          `https://rick-and-morty-production-b632.up.railway.app/rickandmorty/character/${id}`
         );
         const data = response.data;
         if (data.name) {
