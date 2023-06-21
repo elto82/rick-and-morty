@@ -9,7 +9,7 @@ sequelize
   .sync({ force: true })
   .then(async () => {
     console.log("DB connect");
-    //console.log(await saveApiData());
+    // console.log(await saveApiData());
 
     await saveApiData();
     app.listen(PORT, () => {
@@ -17,5 +17,6 @@ sequelize
     });
   })
   .catch((error) => {
-    console.log(error.message);
+    console.error("Error during deployment:", error);
+    process.exit(1); // Salir del proceso con código de error
   });
